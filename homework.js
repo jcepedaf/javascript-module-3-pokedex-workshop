@@ -5,7 +5,7 @@ const renderPokemonCard = (res) => {
     cardElement.innerHTML = cardFragmentHtml;
     document.querySelector(".card-container").appendChild(cardElement);
     document.querySelector(".card-text").innerHTML = res.name;
-    document.querySelector(".card-img-top").src = res.sprites.back_default;
+    document.querySelector(".card-img-top").src = res.sprites.front_default;
   };
   
   const clearContent = () => {
@@ -43,9 +43,7 @@ const renderPokemonCard = (res) => {
       listElement.classList.add(`pokemon-${i + 1}`, "list-group-item");
       document.querySelector(".list-group").appendChild(listElement);
       listElement.innerHTML = `<button class ="btn btn-link">${pokemon.name}</button>`;
-      document.querySelector(`.pokemon-${i + 1}`).onclick = () => {
-        getSinglePokemon(i + 1);
-      };
+      document.querySelector(`.pokemon-${i + 1}`).onclick = () => { getSinglePokemon(i + 1); };
     });
   };
   
